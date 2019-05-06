@@ -19,5 +19,7 @@ public class HomePage extends TestBase {
 	@FindBy(css = "[lob='Health']")
 	WebElement Health;
 	
-
+public void test() {
+	System.out.println("Hello");
+	}
 }

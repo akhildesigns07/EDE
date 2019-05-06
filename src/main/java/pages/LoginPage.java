@@ -24,6 +24,9 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath=("//span[@id='loginErrorMessage']"))
 	WebElement invalid;
 	
+	@FindBy(css = "[id='showmenu']")
+	WebElement showmenu;
+	
 	public LoginPage(){
 		PageFactory.initElements(driver, this);
 	}
@@ -42,6 +45,11 @@ public class LoginPage extends TestBase {
 		password.sendKeys(pwd+"234");
 		loginbtn.click();
 		Assert.assertEquals(invalid.getText(),"Please enter valid credential");
+		return new HomePage();
+	}
+	
+	public HomePage loginTest() {
+		Assert.assertTrue(showmenu.isDisplayed());
 		return new HomePage();
 	}
 }

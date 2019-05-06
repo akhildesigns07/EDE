@@ -1,7 +1,6 @@
 package testcases;
 
 import org.testng.annotations.Test;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -30,13 +29,14 @@ public class LoginPageTest extends TestBase{
 	public void loginTest(){
 		
 			homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+			homePage = loginPage.loginTest();
 			
 	}
-	@Test
+	/*@Test
 	public void loginPasswordErrorTest() {
 		homePage = loginPage.loginPasswordError(prop.getProperty("username"), prop.getProperty("password"));
 		
-	}
+	}*/
 	
 	
 	

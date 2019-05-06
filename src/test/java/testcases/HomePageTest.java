@@ -1,12 +1,8 @@
 package testcases;
 
 import org.testng.annotations.Test;
-import org.junit.BeforeClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-
 import base.TestBase;
 //import junit.framework.Assert;
 import pages.HomePage;
@@ -29,22 +25,30 @@ public class HomePageTest extends TestBase{
 	
 	
 	
-	@Test
+	@Test (priority=1)
 	public void loginTest(){
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	
 	}
-	@Test
-	public void check() {
-		homePage.test();
+	@Test (priority=2)
+	public void individual() throws Exception {
+		if((prop.getProperty("lob")).equals("health")) {
+			homePage.IU(prop.getProperty("lob"));
+			}
+			else if((prop.getProperty("lob")).equals("dental")){
+				System.out.println("dental");
+			}
 	}
+		
 	
 	
 	
-	@AfterMethod
+	
+	
+	/*@AfterMethod
 	public void tearDown(){
 		driver.quit();
-	}
+	}*/
 	
 
 }

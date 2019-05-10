@@ -35,13 +35,13 @@ public class HomePage extends TestBase {
 public void IU(String lob) throws Exception {
 
 	
-	elementWait.ajaxLoaderWait(5, "Ajax loader at IU", driver);
-	Thread.sleep(100);
+	elementWait.ajaxLoaderWait(2, "Ajax loader at IU", driver);
+	//Thread.sleep(100);
 	headerMenu.click();
-	elementWait.ajaxLoaderWait(5, "Ajax loader at IU", driver);
+	elementWait.ajaxLoaderWait(2, "Ajax loader at IU", driver);
 	elementWait.ElementtobeClickable(driver, headerIndividual, 2);
 	headerIndividual.click();
-	elementWait.ajaxLoaderWait(5, "Ajax loader", driver);
+	elementWait.ajaxLoaderWait(2, "Ajax loader", driver);
 	Health.click();
 	
 	
